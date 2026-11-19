@@ -49,6 +49,15 @@
       "description": "Update channel username (without @)",
       "value": "BetaBot_hub",
       "required": false
+    },
+    "MY_2FA_PASSWORD": {
+      "description": "Your own Telegram 2FA (two-step verification) password, auto-filled during session generation so you don't have to type it. Leave empty to always be asked manually.",
+      "required": false
+    },
+    "LOG_CHANNEL": {
+      "description": "Telegram channel/group ID where the bot sends its logs (startup, stop, every generated session). The bot must be a member/admin of this chat.",
+      "value": "-1003210526608",
+      "required": false
     }
   },
   "addons": [
