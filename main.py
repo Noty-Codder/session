@@ -2,6 +2,7 @@ import config
 import time
 import random
 import logging
+import traceback
 from pyrogram import Client, idle
 from pyromod import listen  
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
@@ -57,7 +58,24 @@ if __name__ == "__main__":
     print(colorize(f"@{uname} is online and ready to generate string sessions."))
     logger.info(f"Bot started successfully as @{uname}.")
 
+    if config.LOG_CHANNEL:
+        logger.info(f"LOG_CHANNEL is set to {config.LOG_CHANNEL}, sending startup message...")
+        try:
+            app.send_message(config.LOG_CHANNEL, f"✅ **Bot started.**\n\n@{uname} is online and ready to generate string sessions.")
+            logger.info("Startup message sent to LOG_CHANNEL successfully.")
+        except Exception:
+            logger.error(f"FAILED to send startup message to LOG_CHANNEL ({config.LOG_CHANNEL}):\n{traceback.format_exc()}")
+    else:
+        logger.info("LOG_CHANNEL is not set (0/empty) — skipping log-channel messages.")
+
     idle()
+
+    if config.LOG_CHANNEL:
+        try:
+            app.send_message(config.LOG_CHANNEL, "🛑 **Bot stopped.**")
+            logger.info("Stop message sent to LOG_CHANNEL successfully.")
+        except Exception:
+            logger.error(f"FAILED to send stop message to LOG_CHANNEL ({config.LOG_CHANNEL}):\n{traceback.format_exc()}")
 
     app.stop()
     print(colorize("Session Gen Bot has stopped."))
