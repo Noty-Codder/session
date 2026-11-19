@@ -1,0 +1,59 @@
+{
+  "name": "BetaBot String Maker",
+  "description": "A Telegram bot to generate Pyrogram & Telethon string sessions easily.",
+  "logo": "https://files.catbox.moe/j2v23d.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "python",
+    "pyrogram",
+    "telethon",
+    "string session"
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "ɢᴇᴛ ᴛʜɪs ᴛᴏᴋᴇɴ ғʀᴏᴍ @BotFather",
+      "required": true
+    },
+    "API_ID": {
+      "description": "ᴛᴇʟᴇɢʀᴀᴍ API ID ғʀᴏᴍ https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "ᴛᴇʟᴇɢʀᴀᴍ API ʜᴀsʜ ғʀᴏᴍ https://my.telegram.org",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "ʏᴏᴜʀ ᴛᴇʟᴇɢʀᴀᴍ ɴᴜᴍᴇʀɪᴄ ᴜsᴇʀ ɪᴅ (ᴀs ᴏᴡɴᴇʀ)",
+      "required": true
+    },
+    "MONGO_DB_URI": {
+      "description": "ʏᴏᴜʀ ᴍᴏɴɢᴏ-ᴅʙ ᴜʀɪ sᴛʀɪɴɢ (sᴛᴀʀᴛɪɴɢ ᴡɪᴛʜ mongodb+srv...)",
+      "required": true
+    },
+    "MUST_JOIN": {
+      "description": "Channel or group username for force-join (without @)",
+      "value": "ll_istkhar_ll",
+      "required": true
+    },
+    "START_IMG": {
+      "description": "Link to an image shown in /start (jpg or png)",
+      "required": false
+    },
+    "SUPPORT_CHAT": {
+      "description": "Support group username (without @)",
+      "value": "betabot_support",
+      "required": false
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Update channel username (without @)",
+      "value": "BetaBot_hub",
+      "required": false
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ]
+}
