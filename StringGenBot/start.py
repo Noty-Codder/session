@@ -24,7 +24,7 @@ async def start(bot: Client, msg: Message):
         [InlineKeyboardButton("ɢᴇɴᴇʀᴧᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ", callback_data="generate")],
         [
             InlineKeyboardButton("ᴜᴘᴅᴧᴛᴇs", url=f"https://t.me/{UPDATE_CHANNEL}"),
-            InlineKeyboardButton("ᴏᴡɴᴇʀ", user_id=OWNER_ID),
+            InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f"tg://user?id={OWNER_ID}"),
         ],
         [InlineKeyboardButton("ɢᴜɪᴅᴇ", callback_data="guide")]
     ]
@@ -83,7 +83,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             [InlineKeyboardButton("ɢᴇɴᴇʀᴧᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ", callback_data="generate")],
             [
                 InlineKeyboardButton("ᴜᴘᴅᴧᴛᴇs", url=f"https://t.me/{UPDATE_CHANNEL}"),
-                InlineKeyboardButton("ᴏᴡɴᴇʀ", user_id=OWNER_ID),
+                InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f"tg://user?id={OWNER_ID}"),
             ],
             [InlineKeyboardButton("ɢᴜɪᴅᴇ", callback_data="guide")]
         ]
